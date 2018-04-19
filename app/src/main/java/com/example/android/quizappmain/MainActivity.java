@@ -58,25 +58,21 @@ public class MainActivity extends AppCompatActivity {
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 0 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question1_radio_option2:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 0 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question1_radio_option3:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 0 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question1_radio_option4:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 0 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                 }
             }
@@ -94,25 +90,21 @@ public class MainActivity extends AppCompatActivity {
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 1 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question2_radio_option2:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 1 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question2_radio_option3:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 1 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question2_radio_option4:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 1 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                 }
             }
@@ -130,25 +122,21 @@ public class MainActivity extends AppCompatActivity {
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 2 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question3_radio_option2:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 2 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question3_radio_option3:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 2 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question3_radio_option4:
                         selectedOptionText = ((RadioButton) findViewById(checkedId)).getText().toString();
                         selectedOptionArray.add( selectedOptionText );
                         questions.get( 2 ).setSelectedOption( selectedOptionArray );
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                 }
             }
@@ -171,7 +159,6 @@ public class MainActivity extends AppCompatActivity {
                             selectedOptionArray.remove( selectedOptionText );
                         }
                         questions.get( 3 ).setSelectedOption( selectedOptionArray);
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question4_checkbox_option2:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
@@ -181,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
                             selectedOptionArray.remove( selectedOptionText );
                         }
                         questions.get( 3 ).setSelectedOption( selectedOptionArray);
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question4_checkbox_option3:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
@@ -191,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
                             selectedOptionArray.remove( selectedOptionText );
                         }
                         questions.get( 3 ).setSelectedOption( selectedOptionArray);
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.question4_checkbox_option4:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
@@ -201,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
                             selectedOptionArray.remove( selectedOptionText );
                         }
                         questions.get( 3 ).setSelectedOption( selectedOptionArray);
-                        Toast.makeText( MainActivity.this,  selectedOptionText + " is selected.", Toast.LENGTH_SHORT ).show();
                         break;
                 }
             }

@@ -22,9 +22,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Check your Geopraphy knowledge"
+            android:text="@string/topic_of_the_quiz"
             android:gravity="center"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:textColor="@color/normal_blue"/>
 
         <EditText
@@ -39,13 +40,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="20dp"
-            android:padding="20dp">
+            android:layout_margin="10dp"
+            android:padding="10dp">
             <TextView
                 android:id="@+id/question1_context"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:textSize="20sp"
+                android:textColor="@color/normal_blue"
                 android:layout_gravity="center"/>
 
             <RadioGroup
@@ -82,13 +85,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="20dp"
-            android:padding="20dp">
+            android:layout_margin="10dp"
+            android:padding="10dp">
             <TextView
                 android:id="@+id/question2_context"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:textSize="20sp"
+                android:textColor="@color/normal_blue"
                 android:layout_gravity="center"/>
 
             <RadioGroup
@@ -125,13 +130,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="20dp"
-            android:padding="20dp">
+            android:layout_margin="10dp"
+            android:padding="10dp">
             <TextView
                 android:id="@+id/question3_context"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:textSize="20sp"
+                android:textColor="@color/normal_blue"
                 android:layout_gravity="center"/>
 
             <RadioGroup
@@ -168,14 +175,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="20dp"
-            android:padding="20dp">
+            android:layout_margin="10dp"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/question4_context"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:textSize="20sp"
+                android:textColor="@color/normal_blue"
                 android:layout_gravity="center"/>
 
             <CheckBox

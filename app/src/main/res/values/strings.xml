@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">QuizAppmain</string>
     <string name="welcome">WELCOME!</string>
+    <string name="topic_of_the_quiz">Check your Geopraphy knowledge</string>
 </resources>
