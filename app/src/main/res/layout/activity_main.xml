@@ -214,13 +214,38 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/question5_context"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20sp"
+                android:textColor="@color/normal_blue"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/question5_edittext_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="4"
+                android:hint="@string/hint_for_question5"/>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/submit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="20dp"
             android:padding="15dp"
-            android:text="Submit"
+            android:text="@string/submit"
             android:backgroundTint="#97B2CD"
             />
 

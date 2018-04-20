@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Question {
-    private String context;
-    private ArrayList<String> options;
-    private ArrayList<String> rightAnswerArray;
-    private ArrayList<String> selectedOptionArray;
+    private String context = "";
+    private ArrayList<String> options = new ArrayList<>(  );
+    private ArrayList<String> rightAnswerArray = new ArrayList<>(  );
+    private ArrayList<String> selectedOptionArray = new ArrayList<>(  );
 
     public ArrayList<String> getRightAnswer() {
         return rightAnswerArray;
@@ -35,9 +35,6 @@ public class Question {
     }
 
     public ArrayList<String> getOptions() {
-        if (options == null){
-            options = new ArrayList<>();
-        }
         return options;
     }
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -17,13 +18,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     ArrayList<Question> questions = new ArrayList<>( );
-    ArrayList<String> selectedOptionArray;
+    ArrayList<String> selectedOptionArrayForQuestion4;
+    ArrayList<String> selectedOptionArrayForQuestion5;
 
     RadioGroup question1, question2, question3;
     CheckBox question4CheckboxOption1;
     CheckBox question4CheckboxOption2;
     CheckBox question4CheckboxOption3;
     CheckBox question4CheckboxOption4;
+    EditText question5Option;
     Button submitButton;
 
     @Override
@@ -36,11 +39,22 @@ public class MainActivity extends AppCompatActivity {
 
         addRadioQuestionsToLayout(questions);
         addCheckboxQuestionsToLayout(questions);
+        addEditTextQuestionToLayout(questions);
 
         submitButton = findViewById( R.id.submit_button );
         submitButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // Question 5 takes its selected option when submit button clicked.
+                selectedOptionArrayForQuestion5 = new ArrayList<>(  );
+                question5Option = findViewById( R.id.question5_edittext_option );
+                String editedText = "";
+                editedText = question5Option.getText().toString();
+                if( !editedText.equals( "" )) { selectedOptionArrayForQuestion5.add( editedText );}
+                questions.get( 4 ).setSelectedOption( selectedOptionArrayForQuestion5 );
+
+
                 calculateAndShowScore();
             }
         } );
@@ -143,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         } );
 
 
-        selectedOptionArray = new ArrayList<>(  );
+        selectedOptionArrayForQuestion4 = new ArrayList<>(  );
         View.OnClickListener checkboxOptionListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,38 +168,38 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.question4_checkbox_option1:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
                         if(((CheckBox) findViewById( checkId )).isChecked()){
-                            selectedOptionArray.add( selectedOptionText );
+                            selectedOptionArrayForQuestion4.add( selectedOptionText );
                         } else {
-                            selectedOptionArray.remove( selectedOptionText );
+                            selectedOptionArrayForQuestion4.remove( selectedOptionText );
                         }
-                        questions.get( 3 ).setSelectedOption( selectedOptionArray);
+                        questions.get( 3 ).setSelectedOption( selectedOptionArrayForQuestion4);
                         break;
                     case R.id.question4_checkbox_option2:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
                         if(((CheckBox) findViewById( checkId )).isChecked()){
-                            selectedOptionArray.add( selectedOptionText );
+                            selectedOptionArrayForQuestion4.add( selectedOptionText );
                         } else {
-                            selectedOptionArray.remove( selectedOptionText );
+                            selectedOptionArrayForQuestion4.remove( selectedOptionText );
                         }
-                        questions.get( 3 ).setSelectedOption( selectedOptionArray);
+                        questions.get( 3 ).setSelectedOption( selectedOptionArrayForQuestion4);
                         break;
                     case R.id.question4_checkbox_option3:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
                         if(((CheckBox) findViewById( checkId )).isChecked()){
-                            selectedOptionArray.add( selectedOptionText );
+                            selectedOptionArrayForQuestion4.add( selectedOptionText );
                         } else {
-                            selectedOptionArray.remove( selectedOptionText );
+                            selectedOptionArrayForQuestion4.remove( selectedOptionText );
                         }
-                        questions.get( 3 ).setSelectedOption( selectedOptionArray);
+                        questions.get( 3 ).setSelectedOption( selectedOptionArrayForQuestion4);
                         break;
                     case R.id.question4_checkbox_option4:
                         selectedOptionText = ((CheckBox) findViewById(checkId)).getText().toString();
                         if(((CheckBox) findViewById( checkId )).isChecked()){
-                            selectedOptionArray.add( selectedOptionText );
+                            selectedOptionArrayForQuestion4.add( selectedOptionText );
                         } else {
-                            selectedOptionArray.remove( selectedOptionText );
+                            selectedOptionArrayForQuestion4.remove( selectedOptionText );
                         }
-                        questions.get( 3 ).setSelectedOption( selectedOptionArray);
+                        questions.get( 3 ).setSelectedOption( selectedOptionArrayForQuestion4);
                         break;
                 }
             }
@@ -201,7 +215,6 @@ public class MainActivity extends AppCompatActivity {
         question4CheckboxOption4 = findViewById( R.id.question4_checkbox_option4 );
         question4CheckboxOption4.setOnClickListener( checkboxOptionListener );
 
-
     }
 
     private void calculateAndShowScore() {
@@ -210,30 +223,35 @@ public class MainActivity extends AppCompatActivity {
         int numberOfWrongAnswers = 0;
         for(Question question : questions) {
 
-            if(question.getSelectedOption().size() != question.getRightAnswer().size()){
-                numberOfWrongAnswers +=1;
-            } else {
 
-                int rightCheckCounter = 0;
-                for (String rightAnswer : question.getRightAnswer()) {
-                    for(String selectedOption : question.getSelectedOption()) {
-                        if(rightAnswer == selectedOption) {
-                            rightCheckCounter +=1;
+            if(question.getSelectedOption().size() == 0) {
+                Toast.makeText( this, "You must answer all of the questions to submit.", Toast.LENGTH_SHORT ).show();
+            }
+            else {
+                if(question.getSelectedOption().size() != question.getRightAnswer().size()){
+                    numberOfWrongAnswers +=1;
+                } else {
+
+                    int rightCheckCounter = 0;
+                    for (String rightAnswer : question.getRightAnswer()) {
+                        for(String selectedOption : question.getSelectedOption()) {
+                            if( rightAnswer.equalsIgnoreCase( selectedOption  ) ) {
+                                rightCheckCounter +=1;
+                            }
                         }
                     }
-                }
-                if(rightCheckCounter == question.getRightAnswer().size()){
-                    numberOfRightAnswers +=1;
-                } else {
-                    numberOfWrongAnswers +=1;
-                }
+                    if(rightCheckCounter == question.getRightAnswer().size()){
+                        numberOfRightAnswers +=1;
+                    } else {
+                        numberOfWrongAnswers +=1;
+                    }
 
+                }
             }
+            Toast.makeText( this," Total right answers: " + numberOfRightAnswers, Toast.LENGTH_SHORT ).show();
+            Toast.makeText( this," Total wrong answers: " + numberOfWrongAnswers, Toast.LENGTH_SHORT ).show();
 
         }
-
-        Toast.makeText( this," Total right answers: " + numberOfRightAnswers, Toast.LENGTH_SHORT ).show();
-        Toast.makeText( this," Total wrong answers: " + numberOfWrongAnswers, Toast.LENGTH_SHORT ).show();
 
 
     }
@@ -286,6 +304,14 @@ public class MainActivity extends AppCompatActivity {
         rightAnswerArrayForQuestion4.add( "Australia" );
         question4.setRightAnswer( rightAnswerArrayForQuestion4 );
         questions.add( question4 );
+
+        Question question5 = new Question();
+        question5.setContext( "Where Do 0 Degrees Latitude and Longitude Intersect?" );
+        ArrayList<String> rightAnswerArrayForQuestion5 = new ArrayList<>(  );
+        rightAnswerArrayForQuestion5.add( "Gulf of Guinea" );
+        question5.setRightAnswer( rightAnswerArrayForQuestion5 );
+        questions.add( question5 );
+
 
         return questions;
     }
@@ -344,6 +370,11 @@ public class MainActivity extends AppCompatActivity {
         CheckBox question4Option4 = findViewById( R.id.question4_checkbox_option4 );
         question4Option4.setText( questions.get( 3 ).getOptions().get( 3 ) );
 
+    }
+
+    private void addEditTextQuestionToLayout(ArrayList<Question> questions) {
+        TextView question5Context = findViewById( R.id.question5_context );
+        question5Context.setText( questions.get( 4 ).getContext() );
     }
 
 

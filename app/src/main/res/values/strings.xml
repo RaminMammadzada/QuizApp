@@ -2,4 +2,6 @@
     <string name="app_name">QuizAppmain</string>
     <string name="welcome">WELCOME!</string>
     <string name="topic_of_the_quiz">Check your Geopraphy knowledge</string>
+    <string name="submit">Submit</string>
+    <string name="hint_for_question5">type the answer here</string>
 </resources>
